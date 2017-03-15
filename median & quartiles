@@ -1,0 +1,19 @@
+def calculate_mean(a_list):
+    #print(a_list)
+    if len(a_list) %2 == 1:
+        return int(a_list[int(len(a_list)/2)])
+    else:
+        return int((( a_list[int(len(a_list)/2) - 1]) + a_list[int(len(a_list)/2)] ) / 2)
+
+
+n = int(input())
+number_list = sorted([int(i) for i in input().split()])
+
+if len(number_list) % 2 == 1:
+    print (calculate_mean(number_list[:int(len(number_list)/2)]))
+    print (calculate_mean(number_list))
+    print (calculate_mean(number_list[int(len(number_list)/2) + 1:]))
+else:
+    print (calculate_mean(number_list[:int(len(number_list)/2 + 1)]))
+    print (calculate_mean(number_list))
+    print (calculate_mean(number_list[int(len(number_list)/2):]))
