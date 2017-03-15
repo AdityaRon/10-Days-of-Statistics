@@ -1,0 +1,12 @@
+N = int(input())
+inp = [int(x) for x in input().split()]
+mean = (sum(inp)/N)
+sdsum = 0
+sd = 0
+for i in inp:
+    sdsum += (i-mean)**2
+    sd = (sdsum/N)**0.5
+print(sd)
+    
+    
+    
