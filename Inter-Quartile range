@@ -1,0 +1,25 @@
+import itertools
+n = int(input())
+if n>=2 and n <=50:
+    inp1 = list(map(int,input().strip().split()))
+    inp2 = list(map(int,input().strip().split()))
+inp3 = []
+for i,j in zip(inp1,inp2):
+    while (j > 0):
+        inp3.append(i)
+        j-=1
+inp3.sort()
+def calmean(array):
+    if len(array) % 2 == 1:
+        median = array[int(len(array)/2)]
+    else:
+        median = (array[int(len(array)/2)] + array[int(len(array)/2)-1])/2
+    return median
+if len(inp3) % 2 == 1:
+    Q1 = calmean(inp3[:int(len(inp3)/2)])
+    Q3 = calmean(inp3[int(len(inp3)/2)+1:])
+    print(round(float(Q3-Q1),1))
+else:
+    Q1 = calmean(inp3[:int(len(inp3)/2)])
+    Q3 = calmean(inp3[int(len(inp3)/2):])
+    print(round(float(Q3-Q1),1))
